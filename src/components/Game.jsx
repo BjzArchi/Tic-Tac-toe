@@ -16,9 +16,14 @@ const Game = () => {
     // we create a copy of the squares table to be modified, rather than modifying the existing table
     const boardCopy = [...board];
     //if user click an occupied square or if game is won, return null
-    if (winner || boardCopy[i]) return null;
-    // put an x or an o in the cilcked square
-    boardCopy[i] = xIsNext ? "X" : "O";
+    if (winner || boardCopy[i])
+      return (
+        null,
+        d(
+          // put an x or an o in the cilcked square
+          (boardCopy[i] = xIsNext ? "X" : "O")
+        )
+      );
     setBoard(boardCopy);
     setXisNext(!xIsNext);
   };
